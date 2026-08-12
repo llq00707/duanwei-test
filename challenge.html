@@ -32,6 +32,23 @@ body {
   border-left: 3px solid #fbbf24; padding-left: 10px;
 }
 
+/* Tier table */
+.tier-table {
+  margin-top: 4px;
+  background: #1f2937; border: 1px solid #374151; border-radius: 12px;
+  overflow: hidden; font-size: 0.82rem;
+}
+.tier-table .tier-row {
+  display: flex; padding: 10px 14px; border-bottom: 1px solid #374151;
+  align-items: center;
+}
+.tier-table .tier-row:last-child { border-bottom: none; }
+.tier-table .tier-row.header { background: #374151; padding: 10px 14px; }
+.tier-table .tier-col { flex: 1; text-align: center; color: #d1d5db; line-height: 1.5; }
+.tier-table .tier-col:first-child { text-align: left; }
+.tier-label { font-size: 0.72rem; font-weight: 700; color: #9ca3af; }
+.tier-highlight { color: #fbbf24; font-weight: 700; }
+
 /* Criteria */
 .criteria { display: flex; flex-direction: column; gap: 10px; }
 .criteria-item {
@@ -143,11 +160,40 @@ body {
     <p class="sub">长期合作伙伴筛选计划。非公开招募，非商业推销。</p>
   </div>
 
+  <div class="section-title">咨询费分档</div>
+  <div class="tier-table">
+    <div class="tier-row header">
+      <div class="tier-col tier-label">档位</div>
+      <div class="tier-col tier-label">月营收</div>
+      <div class="tier-col tier-label">咨询费</div>
+      <div class="tier-col tier-label">增利目标</div>
+    </div>
+    <div class="tier-row">
+      <div class="tier-col">基础档</div>
+      <div class="tier-col">&lt; 5万</div>
+      <div class="tier-col tier-highlight">5,000元</div>
+      <div class="tier-col">≥ 5,000元</div>
+    </div>
+    <div class="tier-row">
+      <div class="tier-col">标准档</div>
+      <div class="tier-col">5 - 15万</div>
+      <div class="tier-col tier-highlight">10,000元</div>
+      <div class="tier-col">≥ 10,000元</div>
+    </div>
+    <div class="tier-row">
+      <div class="tier-col">进阶档</div>
+      <div class="tier-col">&gt; 15万</div>
+      <div class="tier-col tier-highlight">20,000元</div>
+      <div class="tier-col">≥ 20,000元</div>
+    </div>
+  </div>
+  <p style="font-size:0.78rem;color:#6b7280;margin-top:8px;line-height:1.5;">小店不设过高门槛，大店不设过低标准。咨询费 = 目标增利金额——付多少，帮你多赚多少。</p>
+
   <div class="section-title">合作标准</div>
   <div class="criteria">
     <div class="criteria-item">
       <div class="criteria-num">1</div>
-      <div class="criteria-text"><strong>为结果支付咨询费。</strong>不观望、不犹豫。支付1万元咨询费，代表你对自身经营的信心以及对增长的决心。</div>
+      <div class="criteria-text"><strong>按体量支付对应档位咨询费。</strong>不观望、不犹豫。支付咨询费代表你对自身经营的信心以及对增长的决心。</div>
     </div>
     <div class="criteria-item">
       <div class="criteria-num">2</div>
@@ -165,7 +211,7 @@ body {
 
       <div class="process-step">
         <div class="process-num active">1</div>
-        <div class="process-text"><strong>支付 1 万元咨询费。</strong>第一道筛选。无决心承担结果成本的合作方，在后续执行阶段同样难以坚持。</div>
+        <div class="process-text"><strong>按体量支付对应档位咨询费。</strong>第一道筛选。无决心承担结果成本的合作方，在后续执行阶段同样难以坚持。</div>
       </div>
       <div class="process-arrow">&#8595;</div>
 
@@ -177,7 +223,7 @@ body {
 
       <div class="process-step">
         <div class="process-num">3</div>
-        <div class="process-text"><strong>第 30 天核算结果。</strong>利润增量 ≥ 1 万元，通过筛选，进入正式长期合作。利润增量 ＜ 1 万元，<strong>1 万元咨询费全额退还</strong>——同时说明未达标环节，今后条件具备仍可重新申请。</div>
+        <div class="process-text"><strong>第 30 天核算结果。</strong>利润增量 ≥ 对应档位目标，通过筛选，进入正式长期合作。利润增量 ＜ 对应档位目标，<strong>咨询费全额退还</strong>——同时说明未达标环节，今后条件具备仍可重新申请。</div>
       </div>
 
     </div>
@@ -188,7 +234,7 @@ body {
       </div>
       <div class="outcome-col fail">
         <div class="outcome-label">不达标</div>
-        1 万元全额退还<br>告知受阻环节<br>条件具备后可重来
+        咨询费全额退还<br>告知受阻环节<br>条件具备后可重来
       </div>
     </div>
   </div>
@@ -232,8 +278,8 @@ body {
 
   <div class="footer">
     <span class="brand">长期合作伙伴筛选计划</span><br>
-    1 万元咨询费 · 30 天目标多赚至少 1 万元 · 未达标全额退还<br>
-    达标进入正式合作，不合格全退并附原因分析
+    咨询费按体量分三档 · 30 天增利目标与咨询费等额 · 未达标全额退还<br>
+    达标进入正式合作，不达标全退并附原因分析
   </div>
 
 </div>
