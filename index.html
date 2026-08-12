@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<!-- v2 - 2026.08.11 -->
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -18,209 +17,81 @@ body {
   justify-content: center;
   padding: 16px;
 }
-.container {
-  width: 100%;
-  max-width: 420px;
-  position: relative;
-}
-/* Header */
+.container { width: 100%; max-width: 420px; }
 .header { text-align: center; padding: 24px 0 8px; }
-.header h1 {
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: #fbbf24;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-}
-.header p {
-  font-size: 0.9rem;
-  color: #9ca3af;
-  margin-top: 6px;
-}
-/* Progress */
+.header h1 { font-size: 1.35rem; font-weight: 700; color: #fbbf24; line-height: 1.5; }
+.header p { font-size: 0.9rem; color: #9ca3af; margin-top: 6px; }
 .progress-wrap { margin: 16px 0 20px; display: none; }
-.progress-wrap.active { display: block; }
-.progress-bar {
-  width: 100%;
-  height: 6px;
-  background: #374151;
-  border-radius: 3px;
-  overflow: hidden;
-}
-.progress-fill {
-  height: 100%;
-  background: linear-gradient(90deg, #f59e0b, #fbbf24);
-  border-radius: 3px;
-  transition: width 0.4s ease;
-}
-.progress-text {
-  text-align: right;
-  font-size: 0.75rem;
-  color: #9ca3af;
-  margin-top: 6px;
-}
-/* Card */
+.progress-wrap.on { display: block; }
+.progress-bar { width: 100%; height: 6px; background: #374151; border-radius: 3px; overflow: hidden; }
+.progress-fill { height: 100%; background: linear-gradient(90deg, #f59e0b, #fbbf24); border-radius: 3px; transition: width 0.4s ease; }
+.progress-text { text-align: right; font-size: 0.75rem; color: #9ca3af; margin-top: 6px; }
 .card {
-  background: #1f2937;
-  border: 1px solid #374151;
-  border-radius: 16px;
-  padding: 24px 20px;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  background: #1f2937; border: 1px solid #374151; border-radius: 16px;
+  padding: 24px 20px; transition: transform 0.3s ease, opacity 0.3s ease;
 }
-.card.swipe-out { transform: translateX(-30px); opacity: 0; }
 .question-label {
-  display: inline-block;
-  background: #fbbf24;
-  color: #111827;
-  font-size: 0.7rem;
-  font-weight: 700;
-  padding: 3px 10px;
-  border-radius: 20px;
+  display: inline-block; background: #fbbf24; color: #111827;
+  font-size: 0.7rem; font-weight: 700; padding: 3px 10px; border-radius: 20px;
   margin-bottom: 12px;
-  letter-spacing: 0.05em;
 }
-.card h2 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  line-height: 1.6;
-  margin-bottom: 20px;
-  color: #f3f4f6;
-}
+.card h2 { font-size: 1.1rem; font-weight: 600; line-height: 1.6; margin-bottom: 20px; color: #f3f4f6; }
 .options { display: flex; flex-direction: column; gap: 10px; }
 .option {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  text-align: left;
-  background: #111827;
-  border: 1.5px solid #374151;
-  border-radius: 12px;
-  padding: 14px 16px;
-  font-size: 0.95rem;
-  color: #d1d5db;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  line-height: 1.45;
+  display: flex; align-items: center; width: 100%; text-align: left;
+  background: #111827; border: 1.5px solid #374151; border-radius: 12px;
+  padding: 14px 16px; font-size: 0.95rem; color: #d1d5db; cursor: pointer;
+  transition: all 0.2s ease; line-height: 1.45;
 }
 .option:active { transform: scale(0.98); }
-.option:hover { border-color: #fbbf24; background: #1a2332; }
 .option .letter {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-  border-radius: 8px;
-  background: #374151;
-  color: #d1d5db;
-  font-size: 0.8rem;
-  font-weight: 700;
-  margin-right: 12px;
-  flex-shrink: 0;
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px; border-radius: 8px; background: #374151;
+  color: #d1d5db; font-size: 0.8rem; font-weight: 700; margin-right: 12px; flex-shrink: 0;
 }
-/* Result */
+.start-btn {
+  display: block; width: 100%; text-align: center;
+  background: linear-gradient(135deg, #f59e0b, #fbbf24); color: #111827;
+  border: none; border-radius: 14px; padding: 18px; font-size: 1.1rem;
+  font-weight: 700; cursor: pointer; margin-top: 8px;
+}
+.start-btn:active { transform: scale(0.97); }
 .result { display: none; text-align: center; }
-.result.active { display: block; }
-.result .tier-badge {
-  display: inline-block;
-  font-size: 1.6rem;
-  font-weight: 800;
-  padding: 6px 24px;
-  border-radius: 30px;
-  margin: 12px 0 8px;
-  letter-spacing: 0.03em;
+.result.on { display: block; }
+.tier-badge {
+  display: inline-block; font-size: 1.6rem; font-weight: 800;
+  padding: 6px 24px; border-radius: 30px; margin: 12px 0 8px;
 }
 .tier-bronze { background: #cd7f32; color: #fff; }
 .tier-silver { background: #a8a8a8; color: #1f2937; }
 .tier-gold { background: linear-gradient(135deg, #f59e0b, #fbbf24); color: #111827; }
 .tier-diamond { background: linear-gradient(135deg, #60a5fa, #a78bfa); color: #fff; }
-.score-display {
-  font-size: 2.8rem;
-  font-weight: 800;
-  color: #fbbf24;
-  margin: 8px 0;
-}
+.score-display { font-size: 2.8rem; font-weight: 800; color: #fbbf24; margin: 8px 0; }
 .score-display span { font-size: 1rem; color: #9ca3af; font-weight: 400; }
-.result-desc {
-  font-size: 0.92rem;
-  color: #d1d5db;
-  line-height: 1.7;
-  text-align: left;
-  margin: 16px 0;
-  padding: 0 4px;
-}
-/* WeChat CTA */
-.wechat-cta {
-  background: #1f2937;
-  border: 1px solid #374151;
-  border-radius: 14px;
-  padding: 18px;
-  margin-top: 16px;
-  text-align: center;
-}
+.result-desc { font-size: 0.92rem; color: #d1d5db; line-height: 1.7; text-align: left; margin: 16px 0; padding: 0 4px; }
+.wechat-cta { background: #1f2937; border: 1px solid #374151; border-radius: 14px; padding: 18px; margin-top: 16px; text-align: center; }
 .wechat-cta .wx-label { font-size: 0.8rem; color: #9ca3af; margin-bottom: 8px; }
-.wechat-cta .wx-id {
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: #fbbf24;
-  letter-spacing: 0.03em;
-  margin-bottom: 10px;
-}
+.wechat-cta .wx-id { font-size: 1.15rem; font-weight: 700; color: #fbbf24; margin-bottom: 10px; }
 .copy-btn {
-  display: inline-block;
-  background: #fbbf24;
-  color: #111827;
-  font-size: 0.85rem;
-  font-weight: 700;
-  border: none;
-  border-radius: 24px;
-  padding: 10px 24px;
-  cursor: pointer;
-  transition: all 0.2s ease;
+  display: inline-block; background: #fbbf24; color: #111827; font-size: 0.85rem;
+  font-weight: 700; border: none; border-radius: 24px; padding: 10px 24px; cursor: pointer;
 }
-.copy-btn:active { transform: scale(0.96); opacity: 0.9; }
-.copy-btn.copied { background: #10b981; color: #fff; }
-/* Buttons */
+.copy-btn:active { transform: scale(0.96); }
 .actions { display: flex; gap: 10px; margin-top: 16px; justify-content: center; flex-wrap: wrap; }
 .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.85rem;
-  font-weight: 600;
-  border-radius: 24px;
-  padding: 10px 22px;
-  border: 1.5px solid #374151;
-  background: transparent;
-  color: #d1d5db;
-  cursor: pointer;
-  transition: all 0.2s ease;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 0.85rem; font-weight: 600; border-radius: 24px; padding: 10px 22px;
+  border: 1.5px solid #374151; background: transparent; color: #d1d5db; cursor: pointer;
 }
 .btn:active { transform: scale(0.96); }
 .btn.gold { background: #fbbf24; color: #111827; border-color: #fbbf24; font-weight: 700; }
-/* Toast */
 .toast {
-  position: fixed;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #fbbf24;
-  color: #111827;
-  font-size: 0.85rem;
-  font-weight: 600;
-  padding: 10px 24px;
-  border-radius: 24px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-  z-index: 100;
+  position: fixed; bottom: 40px; left: 50%; transform: translateX(-50%);
+  background: #fbbf24; color: #111827; font-size: 0.85rem; font-weight: 600;
+  padding: 10px 24px; border-radius: 24px; opacity: 0; transition: opacity 0.3s ease;
+  pointer-events: none; z-index: 100;
 }
 .toast.show { opacity: 1; }
-/* Responsive */
-@media (min-width: 420px) {
-  .header h1 { font-size: 1.45rem; }
-  .card h2 { font-size: 1.15rem; }
-}
 </style>
 </head>
 <body>
@@ -229,203 +100,156 @@ body {
     <h1>3分钟测出你的店在悄悄漏多少钱</h1>
     <p>5道题，做完自动出结果</p>
   </div>
-
-  <div class="progress-wrap" id="progressWrap">
-    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
-    <div class="progress-text" id="progressText">第 1/5 题</div>
+  <div class="progress-wrap" id="pw">
+    <div class="progress-bar"><div class="progress-fill" id="pf"></div></div>
+    <div class="progress-text" id="pt"></div>
   </div>
-
-  <div class="card" id="quizCard"></div>
-  <div class="result" id="resultSection"></div>
-
+  <div class="card" id="card"></div>
+  <div class="result" id="rs"></div>
   <div class="toast" id="toast"></div>
 </div>
 
 <script>
-const questions = [
-  {
-    label: "第 1 题 · 5",
-    title: "客人进店逛了一圈走了，你觉得是因为？",
-    options: [
-      { letter: "A", text: "他没找到"非买不可"的理由", score: 3 },
-      { letter: "B", text: "随便看看很正常", score: 1 },
-      { letter: "C", text: "今天不需要，下次可能会买", score: 0 }
-    ]
-  },
-  {
-    label: "第 2 题 · 5",
-    title: "你的定价逻辑最接近哪种？",
-    options: [
-      { letter: "A", text: "参考同行，比他们便宜一点", score: 1 },
-      { letter: "B", text: "看心情 / 看人定价", score: 0 },
-      { letter: "C", text: "根据成本和市场接受度理性定价", score: 3 }
-    ]
-  },
-  {
-    label: "第 3 题 · 5",
-    title: "客户买完第一次后，你做了什么？",
-    options: [
-      { letter: "A", text: "加了微信，但从来没主动聊过", score: 1 },
-      { letter: "B", text: "什么也没做，等他下次再来", score: 0 },
-      { letter: "C", text: "加了微信，定期发内容/问候/活动通知", score: 3 }
-    ]
-  },
-  {
-    label: "第 4 题 · 5",
-    title: "如果有人问"你家和隔壁有啥区别"，你会？",
-    options: [
-      { letter: "A", text: "一句话说清楚，对方听完点头", score: 3 },
-      { letter: "B", text: "说了一堆，对方好像没听懂", score: 1 },
-      { letter: "C", text: "你试试就知道了", score: 0 }
-    ]
-  },
-  {
-    label: "第 5 题 · 5",
-    title: "你更在意什么？",
-    options: [
-      { letter: "A", text: "每单能赚多少", score: 0 },
-      { letter: "B", text: "客户会不会再来", score: 1 },
-      { letter: "C", text: "客户会不会介绍朋友来", score: 3 }
-    ]
-  }
+var Q = [
+  {label:"第 1 题",title:"客人进店逛了一圈走了，你觉得是因为？",opts:[
+    {l:"A",t:"他没找到必须买的理由",s:3},
+    {l:"B",t:"随便看看很正常",s:1},
+    {l:"C",t:"今天不需要，下次可能会买",s:0}
+  ]},
+  {label:"第 2 题",title:"你的定价逻辑最接近哪种？",opts:[
+    {l:"A",t:"参考同行，比他们便宜一点",s:1},
+    {l:"B",t:"看心情或看人定价",s:0},
+    {l:"C",t:"根据成本和市场接受度理性定价",s:3}
+  ]},
+  {label:"第 3 题",title:"客户买完第一次后，你做了什么？",opts:[
+    {l:"A",t:"加了微信，但从来没主动聊过",s:1},
+    {l:"B",t:"什么也没做，等他下次再来",s:0},
+    {l:"C",t:"加了微信，定期发内容问候活动通知",s:3}
+  ]},
+  {label:"第 4 题",title:"如果有人问你家和隔壁有啥区别，你会？",opts:[
+    {l:"A",t:"一句话说清楚，对方听完点头",s:3},
+    {l:"B",t:"说了一堆，对方好像没听懂",s:1},
+    {l:"C",t:"你试试就知道了",s:0}
+  ]},
+  {label:"第 5 题",title:"你更在意什么？",opts:[
+    {l:"A",t:"每单能赚多少",s:0},
+    {l:"B",t:"客户会不会再来",s:1},
+    {l:"C",t:"客户会不会介绍朋友来",s:3}
+  ]}
 ];
 
-const tiers = [
-  { min: 0, max: 5, name: "青铜", css: "tier-bronze", emoji: "" },
-  { min: 6, max: 9, name: "白银", css: "tier-silver", emoji: "" },
-  { min: 10, max: 12, name: "黄金", css: "tier-gold", emoji: "" },
-  { min: 13, max: 15, name: "钻石", css: "tier-diamond", emoji: "" }
+var T = [
+  {lo:0,hi:5,n:"青铜",c:"tier-bronze",
+   d:"别紧张，80%的老板都在这。问题不是你没努力，是你的努力没打到点上。你现在最需要的不是再做点什么，而是先停一下，看清楚钱到底从哪个洞漏出去的。加我微信 llq00707，发你一份《经营漏钱自查清单》，对着过一遍，比乱折腾管用100倍。"},
+  {lo:6,hi:9,n:"白银",c:"tier-silver",
+   d:"你有基础，但几个关键动作没做到位。就像水龙头拧得够紧，但水管上有个沙眼——不大，但一年下来也不少。你现在差的是把对的顺序做对。加我微信 llq00707，送你一份《3个7天见效的堵漏动作》，针对你这种有底子但差一口气的店。"},
+  {lo:10,hi:12,n:"黄金",c:"tier-gold",
+   d:"很少见了。你的经营逻辑是通的，剩下的是把80分做到95分。这种级别的优化，差的就是那一点点认知差。加我微信 llq00707，送你一份《利润放大镜：一个动作让客单价翻倍的案例拆解》。"},
+  {lo:13,hi:15,n:"钻石",c:"tier-diamond",
+   d:"要么偷看了答案，要么就是真天选商家。这个段位的人，通常在找怎么从赚钱变成自动赚钱。加我微信 llq00707，送你一份《增量杠杆：不增加客流也能涨利润的3个开关》。"}
 ];
 
-const resultTexts = {
-  "青铜": "别紧张，80% 的老板都在这。问题不是你没努力，是你的努力没打到点上。你现在最需要的不是"再做点什么"，而是"先停一下，看清楚钱到底从哪个洞漏出去的"。加我微信 llq00707，发你一份《经营漏钱自查清单》，对着过一遍，比乱折腾管用 100 倍。",
-  "白银": "你有基础，但几个关键动作没做到位。就像水龙头拧得够紧，但水管上有个沙眼——不大，但一年下来也不少。你现在差的是"把对的顺序做对"。加我微信 llq00707，送你一份《3 个 7 天见效的堵漏动作》，针对你这种"有底子但差一口气"的店。",
-  "黄金": "很少见了。你的经营逻辑是通的，剩下的是"把 80 分做到 95 分"。这种级别的优化，差的就是那一点点认知差。加我微信 llq00707，送你一份《利润放大镜：一个动作让客单价翻倍的案例拆解》。",
-  "钻石": "要么偷看了答案，要么就是真·天选商家。这个段位的人，通常在找"怎么从赚钱变成自动赚钱"。加我微信 llq00707，送你一份《增量杠杆：不增加客流也能涨利润的 3 个开关》。"
-};
+var cur=0, score=0;
+var card=document.getElementById("card");
+var rs=document.getElementById("rs");
+var pw=document.getElementById("pw");
+var pf=document.getElementById("pf");
+var pt=document.getElementById("pt");
+var toast=document.getElementById("toast");
 
-let currentQ = 0;
-let totalScore = 0;
-const card = document.getElementById("quizCard");
-const resultSec = document.getElementById("resultSection");
-const progressWrap = document.getElementById("progressWrap");
-const progressFill = document.getElementById("progressFill");
-const progressText = document.getElementById("progressText");
-const toast = document.getElementById("toast");
-
-function showQuestion(idx) {
-  if (idx >= questions.length) { showResult(); return; }
-  currentQ = idx;
-  progressWrap.classList.add("active");
-  const pct = Math.round((idx / questions.length) * 100);
-  progressFill.style.width = pct + "%";
-  progressText.textContent = "第 " + (idx + 1) + "/" + questions.length + " 题";
-
-  const q = questions[idx];
-  let html = '<span class="question-label">' + q.label + "</span>";
-  html += "<h2>" + q.title + "</h2>";
-  html += '<div class="options">';
-  q.options.forEach((opt, oi) => {
-    html += '<button class="option" data-score="' + opt.score + '"><span class="letter">' + opt.letter + '</span>' + opt.text + "</button>";
-  });
-  html += "</div>";
-  card.innerHTML = html;
-  card.style.opacity = "1";
-  card.style.transform = "translateX(0)";
-
-  document.querySelectorAll(".option").forEach(btn => {
-    btn.addEventListener("click", function() {
-      const score = parseInt(this.dataset.score);
-      totalScore += score;
-      card.classList.add("swipe-out");
-      setTimeout(() => {
-        card.classList.remove("swipe-out");
-        showQuestion(idx + 1);
-      }, 280);
-    });
-  });
+function init(){
+  card.innerHTML='<button class="start-btn" onclick="startQuiz()">开始测试</button>';
 }
-
-function getTier(score) {
-  for (const t of tiers) {
-    if (score >= t.min && score <= t.max) return t;
+function startQuiz(){
+  score=0; cur=0;
+  rs.classList.remove("on"); rs.innerHTML="";
+  pw.classList.add("on");
+  showQ(0);
+}
+function showQ(i){
+  if(i>=Q.length){ showResult(); return; }
+  cur=i;
+  var pct=Math.round((i/Q.length)*100);
+  pf.style.width=pct+"%";
+  pt.textContent="第 "+(i+1)+"/"+Q.length+" 题";
+  var q=Q[i];
+  var h='<span class="question-label">'+q.label+"</span>";
+  h+="<h2>"+q.title+"</h2>";
+  h+='<div class="options">';
+  for(var j=0;j<q.opts.length;j++){
+    var o=q.opts[j];
+    h+='<button class="option" data-s="'+o.s+'"><span class="letter">'+o.l+"</span>"+o.t+"</button>";
   }
-  return tiers[0];
-}
-
-function showResult() {
-  progressFill.style.width = "100%";
-  progressText.textContent = "完成";
-  card.style.display = "none";
-  resultSec.classList.add("active");
-
-  const tier = getTier(totalScore);
-  const desc = resultTexts[tier.name];
-
-  let html = "";
-  html += '<div class="score-display">' + totalScore + "<span> 分</span></div>";
-  html += '<div class="tier-badge ' + tier.css + '">' + tier.name + "店主</div>";
-  html += '<div class="result-desc">' + desc + "</div>";
-
-  html += '<div class="wechat-cta">';
-  html += '<div class="wx-label">加微信领取专属资料</div>';
-  html += '<div class="wx-id">llq00707</div>';
-  html += '<button class="copy-btn" id="copyWx">复制微信号</button>';
-  html += "</div>";
-
-  html += '<div class="actions">';
-  html += '<button class="btn gold" id="shareBtn">分享给朋友</button>';
-  html += '<button class="btn" id="retryBtn">重新测试</button>';
-  html += "</div>";
-
-  resultSec.innerHTML = html;
-
-  document.getElementById("copyWx").addEventListener("click", function() {
-    navigator.clipboard.writeText("llq00707").then(() => {
-      this.textContent = "已复制";
-      this.classList.add("copied");
-      showToast("微信号已复制，去微信添加 llq00707");
-      setTimeout(() => { this.textContent = "复制微信号"; this.classList.remove("copied"); }, 2000);
+  h+="</div>";
+  card.innerHTML=h;
+  card.style.display="block";
+  card.style.opacity="1";
+  var btns=document.querySelectorAll(".option");
+  for(var k=0;k<btns.length;k++){
+    btns[k].addEventListener("click",function(){
+      var s=parseInt(this.getAttribute("data-s"));
+      score+=s;
+      showQ(cur+1);
     });
-  });
+  }
+}
+function showResult(){
+  pf.style.width="100%";
+  pt.textContent="完成";
+  card.style.display="none";
+  rs.classList.add("on");
+  var tier=T[0];
+  for(var i=0;i<T.length;i++){
+    if(score>=T[i].lo && score<=T[i].hi){ tier=T[i]; break; }
+  }
+  var h='<div class="score-display">'+score+"<span> 分</span></div>";
+  h+='<div class="tier-badge '+tier.c+'">'+tier.n+"店主</div>";
+  h+='<div class="result-desc">'+tier.d+"</div>";
+  h+='<div class="wechat-cta"><div class="wx-label">加微信领取专属资料</div>';
+  h+='<div class="wx-id">llq00707</div>';
+  h+='<button class="copy-btn" id="copyWx">复制微信号</button></div>';
+  h+='<div class="actions">';
+  h+='<button class="btn gold" id="shareBtn">分享给朋友</button>';
+  h+='<button class="btn" id="retryBtn">重新测试</button>';
+  h+="</div>";
+  rs.innerHTML=h;
 
-  document.getElementById("shareBtn").addEventListener("click", function() {
-    const shareText = "我刚测了我的店是" + tier.name + "店主（" + totalScore + "分），你的店什么段位？3分钟免费测一下→";
-    if (navigator.share) {
-      navigator.share({ title: "3分钟测出你的店在悄悄漏多少钱", text: shareText, url: window.location.href })
-        .catch(() => copyShareText(shareText));
+  document.getElementById("copyWx").addEventListener("click",function(){
+    var t=this;
+    if(navigator.clipboard){
+      navigator.clipboard.writeText("llq00707").then(function(){
+        t.textContent="已复制"; toastMsg("微信号已复制，去微信添加 llq00707");
+        setTimeout(function(){ t.textContent="复制微信号"; },2000);
+      });
     } else {
-      copyShareText(shareText);
+      toastMsg("微信号：llq00707");
     }
   });
 
-  document.getElementById("retryBtn").addEventListener("click", resetQuiz);
-}
+  document.getElementById("shareBtn").addEventListener("click",function(){
+    var txt="我刚测了我的店是"+tier.n+"店主（"+score+"分），你的店什么段位？3分钟免费测一下";
+    if(navigator.share){
+      navigator.share({title:"3分钟测出你的店在悄悄漏多少钱",text:txt,url:window.location.href}).catch(function(){});
+    } else {
+      if(navigator.clipboard){
+        navigator.clipboard.writeText(txt+" "+window.location.href).then(function(){
+          toastMsg("分享文案已复制，去粘贴吧");
+        });
+      }
+    }
+  });
 
-function copyShareText(text) {
-  navigator.clipboard.writeText(text + " " + window.location.href).then(() => {
-    showToast("分享文案已复制，去粘贴给朋友吧");
+  document.getElementById("retryBtn").addEventListener("click",function(){
+    rs.classList.remove("on"); rs.innerHTML="";
+    card.style.display="block";
+    startQuiz();
   });
 }
-
-function resetQuiz() {
-  totalScore = 0;
-  currentQ = 0;
-  resultSec.classList.remove("active");
-  resultSec.innerHTML = "";
-  card.style.display = "block";
-  card.style.opacity = "1";
-  showQuestion(0);
+function toastMsg(m){
+  toast.textContent=m; toast.classList.add("show");
+  setTimeout(function(){ toast.classList.remove("show"); },2200);
 }
-
-function showToast(msg) {
-  toast.textContent = msg;
-  toast.classList.add("show");
-  setTimeout(() => toast.classList.remove("show"), 2200);
-}
-
-// Start
-showQuestion(0);
+init();
 </script>
 </body>
 </html>
