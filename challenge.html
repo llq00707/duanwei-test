@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>30天多赚1万挑战</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: #111827;
+  color: #e5e7eb;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+}
+.container { width: 100%; max-width: 460px; }
+
+.header { text-align: center; padding: 16px 0 24px; }
+.header h1 {
+  font-size: 1.45rem; font-weight: 800; color: #fbbf24; line-height: 1.55;
+  margin-bottom: 10px;
+}
+.header .sub { font-size: 0.88rem; color: #9ca3af; line-height: 1.5; }
+
+.section-title {
+  font-size: 0.95rem; font-weight: 700; color: #f3f4f6;
+  margin: 28px 0 14px; padding-left: 4px;
+  border-left: 3px solid #fbbf24; padding-left: 10px;
+}
+
+/* Cases */
+.cases { display: flex; flex-direction: column; gap: 12px; }
+.case-card {
+  background: #1f2937; border: 1px solid #374151; border-radius: 14px;
+  padding: 18px 20px;
+}
+.case-label { font-size: 0.7rem; font-weight: 700; color: #fbbf24; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px; }
+.case-row { font-size: 0.85rem; line-height: 1.6; color: #d1d5db; margin-bottom: 6px; }
+.case-row:last-child { margin-bottom: 0; }
+.case-row .tag { display: inline-block; font-size: 0.7rem; font-weight: 700; color: #fbbf24; background: rgba(251,191,36,0.12); padding: 1px 8px; border-radius: 4px; margin-right: 6px; min-width: 52px; text-align: center; }
+.case-highlight { color: #fbbf24; font-weight: 700; }
+
+/* Process */
+.process { margin-top: 4px; }
+.process-steps {
+  display: flex; flex-direction: column; gap: 0;
+  background: #1f2937; border: 1px solid #374151; border-radius: 14px;
+  overflow: hidden;
+}
+.process-step {
+  display: flex; align-items: flex-start; gap: 14px;
+  padding: 16px 20px;
+  border-bottom: 1px solid #374151;
+  font-size: 0.85rem; line-height: 1.55;
+}
+.process-step:last-child { border-bottom: none; }
+.process-num {
+  flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%;
+  background: #374151; color: #d1d5db; font-weight: 700; font-size: 0.8rem;
+  display: flex; align-items: center; justify-content: center;
+}
+.process-num.active { background: #fbbf24; color: #111827; }
+.process-text strong { color: #f3f4f6; }
+.process-arrow {
+  display: flex; align-items: center; justify-content: center;
+  margin: -6px 0; color: #6b7280; font-size: 0.75rem; letter-spacing: 2px;
+}
+
+/* Logic summary */
+.logic-box {
+  background: rgba(251,191,36,0.08); border: 1px solid rgba(251,191,36,0.2); border-radius: 12px;
+  padding: 16px 20px; margin-top: 16px;
+  font-size: 0.85rem; line-height: 1.7; color: #d1d5db; text-align: center;
+}
+.logic-box strong { color: #fbbf24; }
+
+/* CTA */
+.cta-section { text-align: center; margin: 28px 0 16px; }
+.cta-btn {
+  display: block; width: 100%; padding: 14px 0;
+  font-size: 0.95rem; font-weight: 700; color: #111827;
+  background: #fbbf24; border: none; border-radius: 28px;
+  cursor: pointer; text-align: center; margin-bottom: 10px;
+  transition: opacity 0.15s;
+}
+.cta-btn:active { opacity: 0.85; transform: scale(0.98); }
+.cta-hint { font-size: 0.78rem; color: #6b7280; }
+
+/* Footer */
+.footer {
+  text-align: center; padding: 28px 0 12px;
+  font-size: 0.72rem; color: #4b5563; line-height: 1.8;
+}
+.footer .brand { color: #fbbf24; font-weight: 600; }
+
+/* Toast */
+.toast {
+  position: fixed; bottom: 40px; left: 50%; transform: translateX(-50%);
+  background: #fbbf24; color: #111827; font-size: 0.85rem; font-weight: 600;
+  padding: 10px 24px; border-radius: 24px; opacity: 0; transition: opacity 0.3s ease;
+  pointer-events: none; z-index: 100;
+}
+.toast.show { opacity: 1; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <h1>30天，帮你多赚至少1万。<br>赚不到，全额退款。</h1>
+    <p class="sub">不是广告，不是课程，是和你对赌的咨询合作。</p>
+  </div>
+
+  <div class="section-title">他们用 30 天跑出了结果</div>
+  <div class="cases">
+
+    <div class="case-card">
+      <div class="case-label">餐饮案例</div>
+      <div class="case-row"><span class="tag">原状况</span>社区快餐店，月营收 9 万，中午满晚上空，翻台率卡在 2.3。</div>
+      <div class="case-row"><span class="tag">做了什么</span>晚市推出「下班拼桌套餐」+ 老客带新客返券，话术聚焦「两个人吃比一个人划算」。</div>
+      <div class="case-row"><span class="tag">30天结果</span>晚市客流量提升 60%，月营收 <span class="case-highlight">9 万 → 12.3 万</span>，增量利润 1.8 万。</div>
+    </div>
+
+    <div class="case-card">
+      <div class="case-label">零售案例</div>
+      <div class="case-row"><span class="tag">原状况</span>社区母婴店，月营收 5 万，客单价 120 元，老客复购率 12%。</div>
+      <div class="case-row"><span class="tag">做了什么</span>将到店客户按消费阶段打标（孕期/0-6月/6-12月），每个标签推不同组合包。</div>
+      <div class="case-row"><span class="tag">30天结果</span>客单价提到 198 元，复购率提到 26%，月营收 <span class="case-highlight">5 万 → 7.4 万</span>，增量利润 1.5 万。</div>
+    </div>
+
+    <div class="case-card">
+      <div class="case-label">生活服务案例</div>
+      <div class="case-row"><span class="tag">原状况</span>小区美发店，月营收 3 万，客源稳定但客单价拉不上去，烫染转化率 8%。</div>
+      <div class="case-row"><span class="tag">做了什么</span>剪发后 3 天微信回访 + 发送「同款发型烫染前后对比图」，一周后推送限名额预约。</div>
+      <div class="case-row"><span class="tag">30天结果</span>烫染转化率提到 22%，月营收 <span class="case-highlight">3 万 → 4.2 万</span>，增量利润 1.1 万。</div>
+    </div>
+
+  </div>
+
+  <div class="section-title">你是怎么合作的</div>
+  <div class="process">
+    <div class="process-steps">
+
+      <div class="process-step">
+        <div class="process-num active">1</div>
+        <div class="process-text"><strong>付 1 万热身费。</strong>一口价，不分档。没有"先测试再合作"——付了钱，我们就开始。</div>
+      </div>
+      <div class="process-arrow">&#8595;</div>
+
+      <div class="process-step">
+        <div class="process-num">2</div>
+        <div class="process-text"><strong>拿到你的专属策略。</strong>3 个工作日内，收到策略核心文档 + 逐日执行日历 + 定制话术。</div>
+      </div>
+      <div class="process-arrow">&#8595;</div>
+
+      <div class="process-step">
+        <div class="process-num">3</div>
+        <div class="process-text"><strong>执行 30 天，每周复盘。</strong>我们全程陪跑——4 次电话复盘，数据说话，偏差当场调整。</div>
+      </div>
+      <div class="process-arrow">&#8595;</div>
+
+      <div class="process-step">
+        <div class="process-num">4</div>
+        <div class="process-text"><strong>第 30 天算账。</strong>利润增量 ≥ 1 万 → 达标，进入正式合作（零固定费用，只分增量）。利润增量 ＜ 1 万 → 不达标，<strong>1 万全额退还</strong>，并告诉你卡在哪个环节。</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="logic-box">
+    <strong>没有答题、没有段位判定、没有门槛评估。</strong><br>
+    热身验证本身就是筛选——愿意付、能执行、达标的人，自然留下。
+  </div>
+
+  <div class="cta-section">
+    <button class="cta-btn" id="ctaBtn">加微信了解详情</button>
+    <p class="cta-hint">微信 llq00707 · 点击按钮自动复制</p>
+  </div>
+
+  <div class="footer">
+    <span class="brand">结果对赌合作</span><br>
+    你付 1 万 · 30 天帮你多赚至少 1 万 · 赚不到全退<br>
+    先验证，再合作。
+  </div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+document.getElementById("ctaBtn").addEventListener("click", function() {
+  var wx = "llq00707";
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(wx).then(function() {
+      toastMsg("微信号已复制：llq00707，去微信添加吧");
+    }).catch(function() {
+      toastMsg("微信号：llq00707，请手动复制添加");
+    });
+  } else {
+    toastMsg("微信号：llq00707，请手动复制添加");
+  }
+});
+
+function toastMsg(m) {
+  var t = document.getElementById("toast");
+  t.textContent = m;
+  t.classList.add("show");
+  setTimeout(function() { t.classList.remove("show"); }, 2200);
+}
+</script>
+</body>
+</html>
