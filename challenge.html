@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>30天多赚1万挑战</title>
+<title>找一个对的人，长期合作</title>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { font-size: 16px; }
@@ -21,28 +21,31 @@ body {
 
 .header { text-align: center; padding: 16px 0 24px; }
 .header h1 {
-  font-size: 1.45rem; font-weight: 800; color: #fbbf24; line-height: 1.55;
+  font-size: 1.35rem; font-weight: 800; color: #fbbf24; line-height: 1.6;
   margin-bottom: 10px;
 }
 .header .sub { font-size: 0.88rem; color: #9ca3af; line-height: 1.5; }
 
 .section-title {
   font-size: 0.95rem; font-weight: 700; color: #f3f4f6;
-  margin: 28px 0 14px; padding-left: 4px;
+  margin: 28px 0 14px;
   border-left: 3px solid #fbbf24; padding-left: 10px;
 }
 
-/* Cases */
-.cases { display: flex; flex-direction: column; gap: 12px; }
-.case-card {
-  background: #1f2937; border: 1px solid #374151; border-radius: 14px;
-  padding: 18px 20px;
+/* Criteria */
+.criteria { display: flex; flex-direction: column; gap: 10px; }
+.criteria-item {
+  display: flex; align-items: flex-start; gap: 12px;
+  background: #1f2937; border: 1px solid #374151; border-radius: 12px;
+  padding: 16px 18px;
 }
-.case-label { font-size: 0.7rem; font-weight: 700; color: #fbbf24; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px; }
-.case-row { font-size: 0.85rem; line-height: 1.6; color: #d1d5db; margin-bottom: 6px; }
-.case-row:last-child { margin-bottom: 0; }
-.case-row .tag { display: inline-block; font-size: 0.7rem; font-weight: 700; color: #fbbf24; background: rgba(251,191,36,0.12); padding: 1px 8px; border-radius: 4px; margin-right: 6px; min-width: 52px; text-align: center; }
-.case-highlight { color: #fbbf24; font-weight: 700; }
+.criteria-num {
+  flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%;
+  background: #374151; color: #fbbf24; font-weight: 700; font-size: 0.78rem;
+  display: flex; align-items: center; justify-content: center;
+}
+.criteria-text { font-size: 0.85rem; line-height: 1.6; color: #d1d5db; }
+.criteria-text strong { color: #f3f4f6; }
 
 /* Process */
 .process { margin-top: 4px; }
@@ -69,14 +72,39 @@ body {
   display: flex; align-items: center; justify-content: center;
   margin: -6px 0; color: #6b7280; font-size: 0.75rem; letter-spacing: 2px;
 }
-
-/* Logic summary */
-.logic-box {
-  background: rgba(251,191,36,0.08); border: 1px solid rgba(251,191,36,0.2); border-radius: 12px;
-  padding: 16px 20px; margin-top: 16px;
-  font-size: 0.85rem; line-height: 1.7; color: #d1d5db; text-align: center;
+.process-outcome {
+  display: flex; gap: 0; margin-top: 0;
 }
-.logic-box strong { color: #fbbf24; }
+.process-outcome .outcome-col {
+  flex: 1; padding: 14px 16px; font-size: 0.82rem; line-height: 1.55;
+  text-align: center;
+}
+.outcome-col.pass { background: rgba(251,191,36,0.08); border-right: 1px solid #374151; }
+.outcome-col.fail { background: rgba(107,114,128,0.08); }
+.outcome-label { font-size: 0.7rem; font-weight: 700; margin-bottom: 4px; }
+.outcome-col.pass .outcome-label { color: #fbbf24; }
+.outcome-col.fail .outcome-label { color: #9ca3af; }
+
+/* Cases */
+.cases { display: flex; flex-direction: column; gap: 12px; }
+.case-card {
+  background: #1f2937; border: 1px solid #374151; border-radius: 14px;
+  padding: 18px 20px;
+}
+.case-label { font-size: 0.7rem; font-weight: 700; color: #fbbf24; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px; }
+.case-row { font-size: 0.85rem; line-height: 1.6; color: #d1d5db; margin-bottom: 6px; }
+.case-row:last-child { margin-bottom: 0; }
+.case-row .tag { display: inline-block; font-size: 0.7rem; font-weight: 700; color: #fbbf24; background: rgba(251,191,36,0.12); padding: 1px 8px; border-radius: 4px; margin-right: 6px; min-width: 52px; text-align: center; }
+.case-highlight { color: #fbbf24; font-weight: 700; }
+
+/* Bottom note */
+.bottom-note {
+  text-align: center; margin: 20px 0 0;
+  font-size: 0.83rem; color: #9ca3af; line-height: 1.7;
+  background: rgba(251,191,36,0.06); border: 1px solid rgba(251,191,36,0.12);
+  border-radius: 12px; padding: 16px 20px;
+}
+.bottom-note strong { color: #fbbf24; }
 
 /* CTA */
 .cta-section { text-align: center; margin: 28px 0 16px; }
@@ -111,82 +139,101 @@ body {
 <div class="container">
 
   <div class="header">
-    <h1>30天，帮你多赚至少1万。<br>赚不到，全额退款。</h1>
-    <p class="sub">不是广告，不是课程，是和你对赌的咨询合作。</p>
+    <h1>不需要打动所有人。<br>只想找到一个对的你。</h1>
+    <p class="sub">我们在筛选长期合作伙伴，不是在卖咨询服务。</p>
   </div>
 
-  <div class="section-title">他们用 30 天跑出了结果</div>
-  <div class="cases">
-
-    <div class="case-card">
-      <div class="case-label">餐饮案例</div>
-      <div class="case-row"><span class="tag">原状况</span>社区快餐店，月营收 9 万，中午满晚上空，翻台率卡在 2.3。</div>
-      <div class="case-row"><span class="tag">做了什么</span>晚市推出「下班拼桌套餐」+ 老客带新客返券，话术聚焦「两个人吃比一个人划算」。</div>
-      <div class="case-row"><span class="tag">30天结果</span>晚市客流量提升 60%，月营收 <span class="case-highlight">9 万 → 12.3 万</span>，增量利润 1.8 万。</div>
+  <div class="section-title">我们在找什么样的人</div>
+  <div class="criteria">
+    <div class="criteria-item">
+      <div class="criteria-num">1</div>
+      <div class="criteria-text"><strong>愿意为结果付费。</strong>不是"先看看""考虑一下"——你敢付 1 万咨询费，说明你对自己的店有底气、对增长有决心。</div>
     </div>
-
-    <div class="case-card">
-      <div class="case-label">零售案例</div>
-      <div class="case-row"><span class="tag">原状况</span>社区母婴店，月营收 5 万，客单价 120 元，老客复购率 12%。</div>
-      <div class="case-row"><span class="tag">做了什么</span>将到店客户按消费阶段打标（孕期/0-6月/6-12月），每个标签推不同组合包。</div>
-      <div class="case-row"><span class="tag">30天结果</span>客单价提到 198 元，复购率提到 26%，月营收 <span class="case-highlight">5 万 → 7.4 万</span>，增量利润 1.5 万。</div>
+    <div class="criteria-item">
+      <div class="criteria-num">2</div>
+      <div class="criteria-text"><strong>每天能执行。</strong>我们有策略，但执行在你。每天至少拿出 1 小时落地动作——不需要多聪明，需要你动起来。</div>
     </div>
-
-    <div class="case-card">
-      <div class="case-label">生活服务案例</div>
-      <div class="case-row"><span class="tag">原状况</span>小区美发店，月营收 3 万，客源稳定但客单价拉不上去，烫染转化率 8%。</div>
-      <div class="case-row"><span class="tag">做了什么</span>剪发后 3 天微信回访 + 发送「同款发型烫染前后对比图」，一周后推送限名额预约。</div>
-      <div class="case-row"><span class="tag">30天结果</span>烫染转化率提到 22%，月营收 <span class="case-highlight">3 万 → 4.2 万</span>，增量利润 1.1 万。</div>
+    <div class="criteria-item">
+      <div class="criteria-num">3</div>
+      <div class="criteria-text"><strong>相信长期主义。</strong>30 天只是开始。你要的不是一次性多赚 1 万——你要的是一套能持续增长的方法和一个能陪你一直跑的伙伴。</div>
     </div>
-
   </div>
 
-  <div class="section-title">你是怎么合作的</div>
+  <div class="section-title">怎么筛人</div>
   <div class="process">
     <div class="process-steps">
 
       <div class="process-step">
         <div class="process-num active">1</div>
-        <div class="process-text"><strong>付 1 万咨询费。</strong>一口价，不分档。没有"先测试再合作"——付了钱，我们就开始。</div>
+        <div class="process-text"><strong>你付 1 万咨询费。</strong>这一步筛掉 90% 的人。不愿意为结果付费的人，执行阶段也坚持不下来——钱在哪里，决心就在哪里。</div>
       </div>
       <div class="process-arrow">&#8595;</div>
 
       <div class="process-step">
         <div class="process-num">2</div>
-        <div class="process-text"><strong>拿到你的专属策略。</strong>3 个工作日内，收到策略核心文档 + 逐日执行日历 + 定制话术。</div>
+        <div class="process-text"><strong>你拿策略，你执行 30 天。</strong>3 个工作日内交付专属策略文档 + 逐日日历 + 定制话术。我们每周一次电话复盘，看数据、调偏差。这一步筛执行力。</div>
       </div>
       <div class="process-arrow">&#8595;</div>
 
       <div class="process-step">
         <div class="process-num">3</div>
-        <div class="process-text"><strong>执行 30 天，每周复盘。</strong>我们全程陪跑——4 次电话复盘，数据说话，偏差当场调整。</div>
-      </div>
-      <div class="process-arrow">&#8595;</div>
-
-      <div class="process-step">
-        <div class="process-num">4</div>
-        <div class="process-text"><strong>第 30 天算账。</strong>利润增量 ≥ 1 万 → 达标，进入正式合作（零固定费用，只分增量）。利润增量 ＜ 1 万 → 不达标，<strong>1 万全额退还</strong>，并告诉你卡在哪个环节。</div>
+        <div class="process-text"><strong>第 30 天算账。</strong>利润增量 ≥ 1 万，你通过筛选，进入长期合作。利润增量 ＜ 1 万，<strong>1 万全额退还</strong>——钱退你，原因告诉你，好聚好散。</div>
       </div>
 
     </div>
+    <div class="process-outcome">
+      <div class="outcome-col pass">
+        <div class="outcome-label">达标</div>
+        进入正式合作<br>零固定费用<br>只拿增量分成
+      </div>
+      <div class="outcome-col fail">
+        <div class="outcome-label">不达标</div>
+        1 万全额退还<br>告知卡在哪<br>下次改进再来
+      </div>
+    </div>
   </div>
 
-  <div class="logic-box">
-    <strong>两阶段合作，费用各自独立。</strong><br>
-    热身期：1 万咨询费（达标不退，不达标全退）<br>
-    正式合作：零固定费用，只拿销售额增量分成<br>
-    月分成 =（当月销售额 − 基线销售额）× 协议比例
+  <div class="bottom-note">
+    <strong>这 30 天，你在验我，我也在验你。</strong><br>
+    你能多赚 1 万 = 我的方法在你店里管用。<br>
+    你能连续执行 30 天 = 你有资格成为长期伙伴。
+  </div>
+
+  <div class="section-title">他们当初也是这样过来的</div>
+  <div class="cases">
+
+    <div class="case-card">
+      <div class="case-label">餐饮</div>
+      <div class="case-row"><span class="tag">原状况</span>社区快餐店，月营收 9 万，中午满晚上空，翻台率卡在 2.3。</div>
+      <div class="case-row"><span class="tag">做了什么</span>晚市推出「下班拼桌套餐」+ 老客带新客返券，话术聚焦「两个人吃比一个人划算」。</div>
+      <div class="case-row"><span class="tag">30天结果</span>晚市客流量提升 60%，月营收 <span class="case-highlight">9 万 → 12.3 万</span>，增量利润 1.8 万。现在已是正式合作第 4 个月。</div>
+    </div>
+
+    <div class="case-card">
+      <div class="case-label">零售</div>
+      <div class="case-row"><span class="tag">原状况</span>社区母婴店，月营收 5 万，客单价 120 元，老客复购率 12%。</div>
+      <div class="case-row"><span class="tag">做了什么</span>将到店客户按消费阶段打标（孕期/0-6月/6-12月），每个标签推不同组合包。</div>
+      <div class="case-row"><span class="tag">30天结果</span>客单价提到 198 元，复购率提到 26%，月营收 <span class="case-highlight">5 万 → 7.4 万</span>，增量利润 1.5 万。现在每月策略自动迭代。</div>
+    </div>
+
+    <div class="case-card">
+      <div class="case-label">生活服务</div>
+      <div class="case-row"><span class="tag">原状况</span>小区美发店，月营收 3 万，客源稳定但客单价拉不上去，烫染转化率 8%。</div>
+      <div class="case-row"><span class="tag">做了什么</span>剪发后 3 天微信回访 + 发送「同款发型烫染前后对比图」，一周后推送预约。</div>
+      <div class="case-row"><span class="tag">30天结果</span>烫染转化率提到 22%，月营收 <span class="case-highlight">3 万 → 4.2 万</span>，增量利润 1.1 万。从单店老板变成了我们长期伙伴。</div>
+    </div>
+
   </div>
 
   <div class="cta-section">
-    <button class="cta-btn" id="ctaBtn">加微信了解详情</button>
-    <p class="cta-hint">微信 llq00707 · 点击按钮自动复制</p>
+    <button class="cta-btn" id="ctaBtn">如果你觉得你是我们要找的人</button>
+    <p class="cta-hint">微信 llq00707 · 点击自动复制</p>
   </div>
 
   <div class="footer">
-    <span class="brand">结果对赌合作</span><br>
+    <span class="brand">长期合作伙伴筛选计划</span><br>
     你付 1 万咨询费 · 30 天多赚至少 1 万 · 赚不到全退<br>
-    先验证，再合作。
+    达标，我们并肩走下去。不达标，钱退你，好聚好散。
   </div>
 
 </div>
